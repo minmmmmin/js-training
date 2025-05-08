@@ -4,7 +4,7 @@ import Chart from "../../components/Chart04";
 import instruction from "./instruction.md?raw";
 
 const convertData = (input) => {
-  const species = Array.from(new Set(input.map(({species}) => species))) ;
+  const species =[...new Set(input.map(({species}) => species))];//こっちのほうがはやりではある。
   return species.map((species) => {
     return{
       id: species,
@@ -14,6 +14,7 @@ const convertData = (input) => {
     };
   });
 };
+//スプレッド構文というものがある
 
 const Lesson = () => {
   return (
